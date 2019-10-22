@@ -13,30 +13,35 @@
 # Else (x is smaller) recur for the left half.
 # Time Complexity is O(log(n))
 
-###### Binary Search Iterative Solution ######
+# Binary Search Iterative Solution
 
 # array of num[l,...,r] and finding x
-def binarySearch(num, l, r, x):
-    while (r >= l):
 
-        mid = int((l + r) / 2)
 
-        if num[mid] == x:
+def binary_search(num_arr, left, right, target):
+    while right >= left:
+
+        mid = int((left + right) / 2)
+
+        if num_arr[mid] == target:
             return mid
 
-        elif num[mid] > x:
-            r = mid - 1
+        elif num_arr[mid] > target:
+            right = mid - 1
 
         else:
-            l = mid + 1
+            left = mid + 1
 
     return -1
 
 
 if __name__ == "__main__":
-    num = [2, 4, 6, 8, 10, 11]
-    x = 10
+    num = [1, 4, 5, 6, 7, 8]
+    x = 6
     l = 0
     r = 5
-    index_of_number = binarySearch(num, l, r, x)
-    print("The number " + str(x) + " is at index " + str(index_of_number) + " in array " + str(num))
+    index_of_number = binary_search(num, l, r, x)
+    if index_of_number != -1:
+        print("The number " + str(x) + " is at index " + str(index_of_number) + " in array " + str(num))
+    else:
+        print("The number is not present")
