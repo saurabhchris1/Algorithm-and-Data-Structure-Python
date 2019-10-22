@@ -16,8 +16,8 @@ def bubble_sort(num_arr):
 
 
 if __name__ == '__main__':
-    num = [64, 34, 25, 12, 22, 11, 90]
+    num = [64, 25, 12, 22, 11]
 
     sorted_arr = bubble_sort(num)
 
-    print ("The sorted array is : ", sorted_arr)
+    print ("The sorted array is : " + str(sorted_arr))

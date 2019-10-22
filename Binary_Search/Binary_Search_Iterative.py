@@ -18,7 +18,10 @@
 # array of num[l,...,r] and finding x
 
 
-def binary_search(num_arr, left, right, target):
+def binary_search(num_arr, target):
+    left = 0
+    right = len(num_arr) - 1
+
     while right >= left:
 
         mid = int((left + right) / 2)
@@ -40,7 +43,7 @@ if __name__ == "__main__":
     x = 6
     l = 0
     r = 5
-    index_of_number = binary_search(num, l, r, x)
+    index_of_number = binary_search(num, x)
     if index_of_number != -1:
         print("The number " + str(x) + " is at index " + str(index_of_number) + " in array " + str(num))
     else:
