@@ -13,30 +13,35 @@
 # Else (x is smaller) recur for the left half.
 # Time Complexity is O(log(n))
 
-###### Binary Search Recursive Solution ######
+# Binary Search Recursive Solution
 
 # array of num[l,...,r] and finding x
-def findNum(num, l, r, x):
-    if r >= l:
-        mid = int((l + r) / 2)
 
-        if num[mid] == x:
+
+def find_num(num_arr, left, right, target):
+    if right >= left:
+        mid = int((left + right) / 2)
+
+        if num_arr[mid] == target:
             return mid
 
-        elif num[mid] > x:
-            return findNum(num, l, mid - 1, x)
+        elif num_arr[mid] > target:
+            return find_num(num_arr, left, mid - 1, target)
 
         else:
-            return findNum(num, mid + 1, r, x)
+            return find_num(num_arr, mid + 1, right, target)
 
     else:
         return -1
 
 
 if __name__ == "__main__":
-    num = [2, 4, 6, 8, 10, 11]
-    x = 10
+    num = [1, 4, 5, 6, 7, 8]
+    x = 6
     l = 0
     r = 5
-    index_of_number = findNum(num, l, r, x)
-    print("The number " + str(x) + " is at index " + str(index_of_number) + " in array " + str(num))
+    index_of_number = find_num(num, l, r, x)
+    if index_of_number != -1:
+        print("The number " + str(x) + " is at index " + str(index_of_number) + " in array " + str(num))
+    else:
+        print("The number is not present")
