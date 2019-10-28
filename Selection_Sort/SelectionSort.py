@@ -24,6 +24,7 @@ num = [64, 25, 12, 22, 11]
 
 
 def selection_sort(num):
+
     for i in range(len(num)):
 
         min_idx = i
@@ -38,8 +39,7 @@ def selection_sort(num):
 
 
 if __name__ == "__main__":
+    num_arr = [64, 25, 12, 22, 11]
 
-    num = [64, 25, 12, 22, 11]
-
-    sorted_array = selection_sort(num)
+    sorted_array = selection_sort(num_arr)
     print("The sorted array is " + str(sorted_array))
