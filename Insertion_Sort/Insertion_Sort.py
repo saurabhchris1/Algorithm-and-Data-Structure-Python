@@ -2,19 +2,20 @@
 # we sort playing cards in our hands
 
 
-def insertion_sort(unsorted_arr):
-    for i in range(1, len(unsorted_arr)):
+def insertion_sort(arr):
+    # Traverse through 1 to len(arr)
+    for i in range(1, len(arr)):
 
-        select_element = unsorted_arr[i]
+        key = arr[i]
 
-        for j in range(i):
-
-            select_before_element = unsorted_arr[i - j - 1]
-
-            if select_element < select_before_element:
-                unsorted_arr[i - j] = unsorted_arr[i - j - 1]
-                unsorted_arr[i - j - 1] = select_element
-    return unsorted_arr
+        # Move elements of arr[0..i-1], that are
+        # greater than key, to one position ahead
+        # of their current position
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
 
 
 if __name__ == '__main__':
