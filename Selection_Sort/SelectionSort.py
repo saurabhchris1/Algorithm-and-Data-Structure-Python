@@ -20,8 +20,6 @@
 # from the unsorted subarray is picked and moved to the sorted subarray.
 # The time complexity of Selection Sort is O(n^2)
 
-num = [64, 25, 12, 22, 11]
-
 
 def selection_sort(num):
 
