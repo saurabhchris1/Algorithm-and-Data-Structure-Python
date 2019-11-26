@@ -1,4 +1,4 @@
-# Depth first search both recursive and iterative
+# Depth first search both recursive and iterative(Using Stacks)
 
 class Node:
 
