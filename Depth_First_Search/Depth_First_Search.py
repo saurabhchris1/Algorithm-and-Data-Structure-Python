@@ -25,8 +25,30 @@ class Node:
                 stack += reversed(node.children)
 
 
-if __name__ == "__main__":
+class Solution:
+    def dfs(self, root):
+        def helper(node):
+            if not node:
+                return
+            print(node.data)
+            if node.children:
+                for child in node.children:
+                    helper(child)
 
+        return helper(root)
+
+    def dfs_Iterative(self, root):
+
+        stack = []
+        stack.append(root)
+        while len(stack):
+            node = stack.pop()
+            print(node.data)
+            if node.children:
+                stack += reversed(node.children)
+
+
+if __name__ == "__main__":
     a = Node('a')
     b = Node('b')
     c = Node('c')
@@ -35,5 +57,7 @@ if __name__ == "__main__":
     f = Node('f')
     a.children = [b, c, d]
     b.children = [e, f]
-    a.dfs()
-    a.dfs_iterative()
+    # a.dfs()
+    # a.dfs_iterative()
+    # Solution().dfs(a)
+    Solution().dfs_Iterative(a)

@@ -36,10 +36,10 @@ def find_num(num_arr, left, right, target):
 
 
 if __name__ == "__main__":
-    num = [1, 4, 5, 6, 7, 8]
-    x = 6
+    num = [1, 1, 2, 2, 2, 2, 4, 5, 6, 7, 8]
+    x = 1
     l = 0
-    r = 5
+    r = 11
     index_of_number = find_num(num, l, r, x)
     if index_of_number != -1:
         print("The number " + str(x) + " is at index " + str(index_of_number) + " in array " + str(num))
